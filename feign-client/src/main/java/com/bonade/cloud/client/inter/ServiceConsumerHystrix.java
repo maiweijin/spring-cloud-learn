@@ -1,16 +1,18 @@
 package com.bonade.cloud.client.inter;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 public class ServiceConsumerHystrix implements ServiceConsumer {
 
 	@Override
-	public Integer add(Integer a, Integer b) {
-		return Integer.MIN_VALUE;
+	public Integer max(Integer a, Integer b) {
+		return -1;
 	}
 
 	@Override
-	public Integer max(Integer a, Integer b) {
-		return Integer.MAX_VALUE;
+	public Integer add(Integer a, Integer b) {
+		return -2;
 	}
 
 }
