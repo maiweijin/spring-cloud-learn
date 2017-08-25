@@ -6,6 +6,8 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
 
+import com.bonade.cloud.client.inter.FeignClientsConfigurationExtend;
+
 @Component
 public class ServiceHealthIndicator implements HealthIndicator {
 
@@ -23,7 +25,7 @@ public class ServiceHealthIndicator implements HealthIndicator {
 
 }
 
-@FeignClient(value = "ADD-SERVICE")
+@FeignClient(value = "ADD-SERVICE", configuration = FeignClientsConfigurationExtend.class)
 interface ServiceHealth extends ServiceHealthCheck {
 
 }
