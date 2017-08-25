@@ -15,6 +15,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
+                <module>config-server</module>
 				<module>cloud-service</module>
 				<module>eureka-server</module>
 				<module>feign-client</module>
@@ -24,6 +25,7 @@
 		<profile>
 			<id>component-test</id>
 			<modules>
+                <module>config-server</module>
 				<module>cloud-service</module>
 				<module>eureka-server</module>
 				<module>feign-client</module>
@@ -33,6 +35,7 @@
 		<profile>
 			<id>package</id>
 			<modules>
+                <module>config-server</module>
 				<module>cloud-service</module>
 				<module>eureka-server</module>
 				<module>feign-client</module>
