@@ -8,8 +8,6 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bonade.cloud.client.inter.Demo;
-import com.bonade.cloud.client.inter.User;
 import com.bonade.cloud.service.TestService;
 
 @RestController
@@ -19,8 +17,6 @@ import com.bonade.cloud.service.TestService;
 public class FeignClientApplication {
 	@Autowired
 	TestService service;
-	@Autowired
-	Demo demo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FeignClientApplication.class, args);
@@ -28,10 +24,6 @@ public class FeignClientApplication {
 
 	@GetMapping("/")
 	public String test() {
-		User user = new User();
-		user.setAge("10");
-		user.setName("mwj");
-		demo.test(user);
 		Integer add = service.add(1, 2);
 		Integer max = service.max(3, 4);
 		return add + "" + max;
