@@ -26,6 +26,6 @@ public class FeignClientApplication {
 	public String test() {
 		Integer add = service.add(1, 2);
 		Integer max = service.max(3, 4);
-		return add + "" + max;
+		return add + "," + max;
 	}
 }
